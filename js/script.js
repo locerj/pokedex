@@ -26,10 +26,15 @@ const renderPokemon = async (pokemon) => {
         pokemonImage.style.display = 'block';
         pokemonName.innerHTML = data.name;
         pokemonNumber.innerHTML = data.id;
+        if (data.id >= 650 ) {
+            pokemonImage.src = data['sprites']['front_default'];
+            input.value = '';
+            searchPokemon = data.id;
+        } else {
         pokemonImage.src = data['sprites']['versions']['generation-v']['black-white']['animated']
         ['front_default'];
         input.value = '';
-        searchPokemon = data.id;
+        searchPokemon = data.id;}
     } else {
         pokemonImage.style.display = 'none';
         pokemonName.innerHTML = 'Not found :('
