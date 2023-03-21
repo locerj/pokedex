@@ -30,6 +30,10 @@ const renderPokemon = async (pokemon) => {
             pokemonImage.src = data['sprites']['front_default'];
             input.value = '';
             searchPokemon = data.id;
+        } if (data.id >= 1009) {
+            pokemonImage.src = data['sprites']['other']['official-artwork']['front_default'];
+            input.value = '';
+            searchPokemon = data.id;
         } else {
         pokemonImage.src = data['sprites']['versions']['generation-v']['black-white']['animated']
         ['front_default'];
